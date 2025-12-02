@@ -8,6 +8,10 @@ const config = {
   output: 'export',
   // Optional: Change links `/me` -> `/me/` and emit `/me.html` -> `/me/index.html`
   trailingSlash: true,
+  images: {
+    unoptimized: true,
+  },
+  basePath: '/fumadocs',
 };
 
 export default withMDX(config);
