@@ -1,6 +1,29 @@
 import { HomeLayout } from 'fumadocs-ui/layouts/home';
-import { baseOptions } from '@/lib/layout.shared';
+import { baseOptions, linkItems } from '@/lib/layout.shared';
+import { NavbarMenu, NavbarMenuTrigger } from 'fumadocs-ui/layouts/home/navbar';
+import Link from 'fumadocs-core/link';
 
 export default function Layout({ children }: LayoutProps<'/'>) {
-  return <HomeLayout {...baseOptions()}>{children}</HomeLayout>;
+  return (
+    <HomeLayout
+      {...baseOptions()}
+      links={[
+        {
+          type: 'custom',
+          on: 'nav',
+          children: (
+            <NavbarMenu>
+              <NavbarMenuTrigger>
+                <Link href="/docs">Documentation</Link>
+              </NavbarMenuTrigger>
+            </NavbarMenu>
+          ),
+        },
+        ...linkItems,
+      ]}
+      className="dark:bg-neutral-950 dark:[--color-fd-background:var(--color-neutral-950)] [--color-fd-primary:var(--color-brand)]"
+    >
+      {children}
+    </HomeLayout>
+  );
 }

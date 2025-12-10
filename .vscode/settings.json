@@ -1,5 +1,13 @@
 {
   "cSpell.words": [
     "fumadocs"
-  ]
+  ],
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+  "files.associations": {
+    "**/packages/create-app/template/**/*": "plaintext"
+  },
 }
